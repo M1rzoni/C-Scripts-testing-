@@ -24,11 +24,4 @@ public class FinishLine : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-
-
-
-    void Update()
-    {
-
-    }
 }

@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] ParticleSystem groundEffectSystem;
 
+    bool canMove = true;
+
 
     void Start()
     {
@@ -24,8 +26,16 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        handleInput();
-        respondToBoost();
+        if (canMove)
+        {
+            handleInput();
+            respondToBoost();
+        }
+    }
+
+    public void DisableControlls()
+    {
+        canMove = false;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
